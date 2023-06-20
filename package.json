@@ -6,6 +6,17 @@
     "lint": "eslint **/*.js --ignore-pattern node_modules/",
     "start": "node ./bin/www"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicolastd01/Express-MySQL.git"
+    },
+
+    "author": "Nicolas Teixeira",
+    "licence": "ISC",
+    "bugs": {
+    "url": "https://github.com/Nicolastd01/Express-MySQL/issues"
+ },
+ "homepage": "https://github.com/Nicolastd01/Express-MySQL#readme",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
