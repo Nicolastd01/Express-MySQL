@@ -1,0 +1,21 @@
+{
+  "name": "expressmysql",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "eslint **/*.js --ignore-pattern node_modules/",
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.18.2",
+    "http-errors": "~1.6.3",
+    "jade": "^0.29.0",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
