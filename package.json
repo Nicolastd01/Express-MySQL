@@ -4,29 +4,31 @@
   "private": true,
   "scripts": {
     "lint": "eslint **/*.js --ignore-pattern node_modules/",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "nodemon": "nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Nicolastd01/Express-MySQL.git"
-    },
-
-    "author": "Nicolas Teixeira",
-    "licence": "ISC",
-    "bugs": {
+  },
+  "author": "Nicolas Teixeira",
+  "licence": "ISC",
+  "bugs": {
     "url": "https://github.com/Nicolastd01/Express-MySQL/issues"
- },
- "homepage": "https://github.com/Nicolastd01/Express-MySQL#readme",
+  },
+  "homepage": "https://github.com/Nicolastd01/Express-MySQL#readme",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "^4.18.2",
     "http-errors": "~1.6.3",
     "jade": "^0.29.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "mysql2": "^3.4.0"
   },
   "devDependencies": {
     "eslint": "^8.43.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "nodemon": "^2.0.22"
   }
 }
