@@ -1,10 +1,10 @@
 const validateDescricao = (req, res, next) =>{
     const {body} = req;
-    if (body.descricao == undefined){
+    if (body.descricao == undefined) {
         return res.status(400)
         .json({message: 'O campo "descricao" e obrigatorio'});
     }
-    if (body.descricao === ''){
+    if (body.descricao === '') {
         return res.status(400)
         .json({message: 'O campo "descricao" nao pode ser vazio'});
     }

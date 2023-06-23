@@ -1,10 +1,10 @@
 const validateName = (req, res, next) =>{
     const {body} = req;
-    if (body.nome == undefined){
+    if (body.nome == undefined) {
         return res.status(400)
         .json({message: 'O campo "nome" e obrigatorio'});
     }
-    if (body.nome === ''){
+    if (body.nome === '') {
         return res.status(400)
         .json({message: 'O campo "nome" nao pode ser vazio'});
     }
