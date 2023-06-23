@@ -1,13 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const mysql = require('mysql2/promise');
+const connection = require('../configs/dbConfiguration');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-    ((connection) => {connection.query('select * from clientes;')
-      .then((result) => {res.send(result[0]);});
-    });
-  
+router.get('/', async function(req, res, next) {
+  const result = await (await connection).execute('SELECT * FROM clientes');
+  res.send(result[0]);
+
 });
 
 module.exports = router;
