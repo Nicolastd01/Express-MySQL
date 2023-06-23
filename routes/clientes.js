@@ -9,18 +9,24 @@ const idadeMiddleware = require('../middlewares/idadeMiddleware');
 router.get('/', clienteController.findAll);
 
 /* POST clientes*/
-router.post('/', function(req, res, next){
-    res.send('POST clientes');
-});
+router.post('/', nomeMiddleware.validateName,
+    sobrenomeMiddleware.validateFamilyName,
+    idadeMiddleware.validateAge,
+    clienteController.save
+);
 
 /* PUT clientes*/
-router.put('/', function(req, res, next){
-    res.send('PUT clientes');
-});
+router.put('/', nomeMiddleware.validateName,
+    sobrenomeMiddleware.validateFamilyName,
+    idadeMiddleware.validateAge,
+    clienteController.update
+);
 
 /* DELETE clentes*/
-router.delete('/', function(req, res, next){
-    res.send('DELETE clientes');
-});
+router.delete('/', nomeMiddleware.validateName,
+    sobrenomeMiddleware.validateFamilyName,
+    idadeMiddleware.validateAge,
+    clienteController.remove
+);
 
 module.exports = router;
