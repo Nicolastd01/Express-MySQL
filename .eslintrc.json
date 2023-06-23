@@ -11,8 +11,10 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "object-curly-spacing": 0,
+        "max-len": 0,
         "new-cap": 0,
-        "space-before-function-paren": 0
+        "space-before-blocks": 0,
+        "linebreak-style": 0,
+        "indent": 0
     }
 }

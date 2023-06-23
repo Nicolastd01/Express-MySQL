@@ -6,7 +6,7 @@ const validatePreco = (req, res, next) => {
     }
     if (isNaN(parseFloat(body.preco)) || parseFloat(body.preco) < 0){
         return res.status(400)
-        .   json({message: 'O campo "preco" deve ser inteiro positivo e valor possivel'});
+        .json({message: 'O campo "preco" deve ser inteiro e valor possivel'});
     }
     next();
 };

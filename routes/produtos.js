@@ -3,7 +3,7 @@ const router = express.Router();
 
 const produtosController = require('../controllers/produtosController');
 const nomeMiddleware = require('../middlewares/nomeMiddleware');
-const descricaoMiddleware  = require('../middlewares/descricaoMiddleware');
+const descricaoMiddleware = require('../middlewares/descricaoMiddleware');
 const precoMiddleware = require('../middlewares/precoMiddlleware');
 
 /* GET produtos*/
@@ -13,7 +13,7 @@ router.get('/', produtosController.findAll);
 router.post('/', nomeMiddleware.validateName,
     descricaoMiddleware.validateDescricao,
     precoMiddleware.validatePreco,
-    produtosController.save
+    produtosController.save,
 );
 
 /* PUT produtos*/

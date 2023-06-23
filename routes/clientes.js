@@ -13,14 +13,14 @@ router.get('/', clienteController.findAll);
 router.post('/', nomeMiddleware.validateName,
     sobrenomeMiddleware.validateFamilyName,
     idadeMiddleware.validateAge,
-    clienteController.save
+    clienteController.save,
 );
 
 /* PUT clientes*/
 router.put('/', nomeMiddleware.validateName,
     sobrenomeMiddleware.validateFamilyName,
     idadeMiddleware.validateAge,
-    clienteController.update
+    clienteController.update,
 );
 
 /* DELETE clentes*/
