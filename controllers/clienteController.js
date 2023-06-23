@@ -1,4 +1,3 @@
-const { response } = require('express');
 const clienteServices = require('../services/clienteServices');
 
 const findAll = async (req, res) => {

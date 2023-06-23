@@ -1,33 +1,33 @@
 const express = require('express');
 const router = express.Router();
 
-const clienteController = require('../controllers/clienteController');
+const produtosController = require('../controllers/produtosController');
 const nomeMiddleware = require('../middlewares/nomeMiddleware');
 const sobrenomeMiddleware = require('../middlewares/sobrenomeMiddleware');
 const idadeMiddleware = require('../middlewares/idadeMiddleware');
 
-/* GET clientes*/
-router.get('/', clienteController.findAll);
+/* GET produtos*/
+router.get('/', produtosController.findAll);
 
-/* POST clientes*/
+/* POST produtos*/
 router.post('/', nomeMiddleware.validateName,
     sobrenomeMiddleware.validateFamilyName,
     idadeMiddleware.validateAge,
-    clienteController.save
+    produtosController.save
 );
 
-/* PUT clientes*/
+/* PUT produtos*/
 router.put('/', nomeMiddleware.validateName,
     sobrenomeMiddleware.validateFamilyName,
     idadeMiddleware.validateAge,
-    clienteController.update
+    produtosController.update
 );
 
-/* DELETE clentes*/
+/* DELETE produtos*/
 router.delete('/', nomeMiddleware.validateName,
     sobrenomeMiddleware.validateFamilyName,
     idadeMiddleware.validateAge,
-    clienteController.remove
+    produtosController.remove
 );
 
 module.exports = router;
