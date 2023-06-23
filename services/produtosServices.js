@@ -15,7 +15,7 @@ const update = async (produtos) => {
 
 const save = async (produtos) => {
     const query = 'INSERT INTO produtos(nome, descricao, preco, data_atualizado) VALUES (?, ?, ?, ?)';
-    const isOk = await (await connection).execute(query, [produtos.nome, produtos.descricao, produtos.preco, produtos.data_atualizado, produtos.id]);
+    const isOk = await (await connection).execute(query, [produtos.nome, produtos.descricao, produtos.preco, produtos.data_atualizado]);
 
     return isOk[0].affectedRows === 1;
 };
