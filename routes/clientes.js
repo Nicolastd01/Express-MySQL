@@ -24,10 +24,6 @@ router.put('/', nomeMiddleware.validateName,
 );
 
 /* DELETE clentes*/
-router.delete('/', nomeMiddleware.validateName,
-    sobrenomeMiddleware.validateFamilyName,
-    idadeMiddleware.validateAge,
-    clienteController.remove
-);
+router.delete('/:id', clienteController.remove);
 
 module.exports = router;

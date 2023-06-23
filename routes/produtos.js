@@ -3,31 +3,23 @@ const router = express.Router();
 
 const produtosController = require('../controllers/produtosController');
 const nomeMiddleware = require('../middlewares/nomeMiddleware');
-const sobrenomeMiddleware = require('../middlewares/sobrenomeMiddleware');
-const idadeMiddleware = require('../middlewares/idadeMiddleware');
+const descricaoMiddleware  = require('../middlewares/descricaoMiddleware');
+const precoMiddleware = require('../middlewares/precoMiddlleware');
 
 /* GET produtos*/
 router.get('/', produtosController.findAll);
 
 /* POST produtos*/
 router.post('/', nomeMiddleware.validateName,
-    sobrenomeMiddleware.validateFamilyName,
-    idadeMiddleware.validateAge,
+    descricaoMiddleware.validateDescricao,
+    precoMiddleware.validatePreco,
     produtosController.save
 );
 
 /* PUT produtos*/
-router.put('/', nomeMiddleware.validateName,
-    sobrenomeMiddleware.validateFamilyName,
-    idadeMiddleware.validateAge,
-    produtosController.update
-);
+router.put('/', produtosController.update);
 
 /* DELETE produtos*/
-router.delete('/', nomeMiddleware.validateName,
-    sobrenomeMiddleware.validateFamilyName,
-    idadeMiddleware.validateAge,
-    produtosController.remove
-);
+router.delete('/:id', produtosController.remove);
 
 module.exports = router;
