@@ -12,14 +12,12 @@ router.get('/', clienteController.findAll);
 /* POST clientes*/
 router.post('/', nomeMiddleware.validateName,
     sobrenomeMiddleware.validateFamilyName,
-    idadeMiddleware.validateAge,
     clienteController.save,
 );
 
 /* PUT clientes*/
 router.put('/', nomeMiddleware.validateName,
     sobrenomeMiddleware.validateFamilyName,
-    idadeMiddleware.validateAge,
     clienteController.update,
 );
 

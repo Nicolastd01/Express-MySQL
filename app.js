@@ -10,8 +10,8 @@ console.log(process.env.MYSQL_DB);
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const clientesRouter = require('./routes/clientes');
-const produtosRouter = require('./routes/produtos');
+const clientesRouter = require('./routes/client');
+const produtosRouter = require('./routes/produto');
 
 const app = express();
 

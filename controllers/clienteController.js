@@ -1,4 +1,4 @@
-const clienteServices = require('../services/clienteServices');
+const clienteServices = require('../services/clientServices');
 
 const findAll = async (req, res) => {
     const clientes = await clienteServices.findAll();
@@ -13,6 +13,8 @@ const update = async (req, res) =>{
 };
 
 const save = async (req, res) =>{
+    console.log(req);
+    console.log(req.body);
     const result = await clienteServices.save(req.body);
     return result ?
         res.status(200).json() :

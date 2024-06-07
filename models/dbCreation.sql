@@ -1,0 +1,18 @@
+CREATE TABLE `lojinhamingo`.`clientes`
+(`id` INT(10) NOT NULL AUTO_INCREMENT ,
+`nome` VARCHAR(255) NOT NULL ,
+`sobrenome` VARCHAR(255) NOT NULL ,
+`email` VARCHAR(255) NOT NULL ,
+`avatarUrl` VARCHAR(255) NOT NULL ,
+PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+CREATE TABLE `lojinhamingo`.`produtos`
+(`id` INT(10) NOT NULL AUTO_INCREMENT ,
+`nome` VARCHAR(255) NOT NULL ,
+`catg` VARCHAR(255) NOT NULL ,
+`quant` VARCHAR(255) NOT NULL ,
+`preco` VARCHAR(255) NOT NULL ,
+`foto` VARCHAR (255) NOT NULL,
+PRIMARY KEY (`id`))
+ENGINE = InnoDB;

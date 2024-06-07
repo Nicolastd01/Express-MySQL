@@ -7,17 +7,23 @@ const findAll = async () => {
 };
 
 const update = async (cliente) => {
-    const query ='UPDATE clientes SET nome=?,sobrenome=?,email=?,idade=? WHERE id=?';
+    const query ='UPDATE clientes SET nome=?,sobrenome=?,email=?,avatarUrl=? WHERE id=?';
     const isOk = await (await connection).execute(query,
-    [cliente.nome, cliente.sobrenome, cliente.email, cliente.idade, cliente.id]);
+        [
+            cliente.nome,
+            cliente.sobrenome,
+            cliente.email,
+            cliente.avatarUrl,
+            cliente.id,
+            ]);
 
     return isOk[0].affectedRows === 1;
 };
 
 const save = async (cliente) =>{
-    const query ='INSERT INTO clientes(nome,sobrenome,email,idade) VALUES (?, ?, ?, ?)';
+    const query ='INSERT INTO clientes(nome,sobrenome,email,avatarUrl) VALUES (?, ?, ?, ?)';
     const isOk = await(await connection).execute(query,
-    [cliente.nome, cliente.sobrenome, cliente.email, cliente.idade]);
+    [cliente.nome, cliente.sobrenome, cliente.email, cliente.avatarUrl]);
 
     return isOk[0].affectedRows === 1;
 };

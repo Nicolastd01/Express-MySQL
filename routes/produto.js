@@ -11,7 +11,6 @@ router.get('/', produtosController.findAll);
 
 /* POST produtos*/
 router.post('/', nomeMiddleware.validateName,
-    descricaoMiddleware.validateDescricao,
     precoMiddleware.validatePreco,
     produtosController.save,
 );

@@ -7,15 +7,15 @@ const findAll = async () => {
 };
 
 const update = async (produtos) => {
-    const query = 'UPDATE produtos SET nome = ?, descricao = ?, preco = ?, data_atualizado = ? WHERE id = ?';
-    const isOk = await (await connection).execute(query, [produtos.nome, produtos.descricao, produtos.preco, produtos.data_atualizado, produtos.id]);
+    const query = 'UPDATE produtos SET nome = ?, catg = ?, quant = ?, preco = ?, foto = ? WHERE id = ?';
+    const isOk = await (await connection).execute(query, [produtos.nome, produtos.catg, produtos.quant, produtos.preco, produtos.foto, produtos.id]);
 
     return isOk[0].affectedRows === 1;
 };
 
 const save = async (produtos) => {
-    const query = 'INSERT INTO produtos(nome, descricao, preco, data_atualizado) VALUES (?, ?, ?, ?)';
-    const isOk = await (await connection).execute(query, [produtos.nome, produtos.descricao, produtos.preco, produtos.data_atualizado]);
+    const query = 'INSERT INTO produtos(nome, catg, quant, preco, foto) VALUES (?, ?, ?, ?, ?)';
+    const isOk = await (await connection).execute(query, [produtos.nome, produtos.catg, produtos.quant, produtos.preco, produtos.foto,]);
 
     return isOk[0].affectedRows === 1;
 };
